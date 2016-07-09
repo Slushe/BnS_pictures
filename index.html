@@ -90,15 +90,7 @@ function process() {
             // Do some validation of custom image
             var image = new Image()
             image.onload = function() {
-                // Maybe we should use dimensions from valid image? Too much code...
-                if (image.width != 378 || image.height != 620) {
-                    // With wrong dimensions custom picture can:
-                    // 1) Be detected automatically by system
-                    // 2) Cause too long profile load times for people with slow connections (you don't need full HD image in that small box)
-                    // 3) Look horrible due to wrong aspect ratio
-                    alert("Custom image dimensions are " + image.width + " x " + image.height + ", expected 378 x 620")
-                    return
-                }
+                
 
                 // Remove exif data from custom image (if present)
                 var result
